@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trust - Add Restaurant</title>
+</head>
+<body>
+<div>
+    <h1>Add Restaurant</h1>
+    <form action="#" th:action="@{/add}" method="post">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <input type="submit" />
+    </form>
+</div>
+</body>
+</html>
