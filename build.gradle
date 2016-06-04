@@ -42,6 +42,9 @@ dependencies {
     compile("mysql:mysql-connector-java")
 //    runtime("com.h2database:h2")
     
+    compile("org.webjars:bootstrap:${bootstrapVersion}")
+    compile("org.webjars:webjars-locator:${webjarsLocatorVersion}")
+
     provided("org.projectlombok:lombok")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")

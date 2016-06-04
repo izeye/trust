@@ -3,13 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Trust</title>
+    
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
 <body>
-<div>
+<div class="container">
     <img th:src="@{/images/noodle.jpg}" />
     <p />
     <h1>Restaurants</h1>
-    <table>
+    <table class="table">
         <thead>
         <tr>
             <th>Name</th>
@@ -21,11 +23,11 @@
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/restaurants/add}">Add a restaurant</a>
+    <a th:href="@{/restaurants/add}" class="btn btn-default">Add a restaurant</a>
     <p />
     
     <h2>Messages</h2>
-    <table>
+    <table class="table">
         <thead>
         <tr>
             <th>Message</th>
@@ -37,7 +39,7 @@
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/messages/add}">Leave a message</a>
+    <a th:href="@{/messages/add}" class="btn btn-default">Leave a message</a>
 </div>
 </body>
 </html>
