@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trust - Leave a Message</title>
+</head>
+<body>
+<div>
+    <h1>Leave a Message</h1>
+    <form action="#" th:action="@{/messages/add}" method="post">
+        <div>
+            <label for="body">Message: </label>
+            <input type="text" id="body" name="body" />
+        </div>
+        <input type="submit" />
+    </form>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
-package com.ctb.trust.core.repository;
+package com.ctb.trust.core.restaurant.repository;
 
-import com.ctb.trust.core.domain.Restaurant;
+import com.ctb.trust.core.restaurant.domain.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

@@ -1,7 +1,7 @@
-package com.ctb.trust.core.service;
+package com.ctb.trust.core.restaurant.service;
 
-import com.ctb.trust.core.domain.Restaurant;
-import com.ctb.trust.core.repository.RestaurantRepository;
+import com.ctb.trust.core.restaurant.domain.Restaurant;
+import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

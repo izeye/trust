@@ -1,4 +1,4 @@
-package com.ctb.trust.core.domain;
+package com.ctb.trust.core.restaurant.domain;
 
 import lombok.Data;
 

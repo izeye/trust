@@ -8,7 +8,6 @@
 <div>
     <img th:src="@{/images/noodle.jpg}" />
     <p />
-    <a th:href="@{/add}">New Restaurant</a>
     <h1>Restaurants</h1>
     <table>
         <thead>
@@ -22,6 +21,23 @@
         </tr>
         </tbody>
     </table>
+    <a th:href="@{/restaurants/add}">Add a restaurant</a>
+    <p />
+    
+    <h2>Messages</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="message : ${messages}">
+            <td th:text="${message.body}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/messages/add}">Leave a message</a>
 </div>
 </body>
 </html>

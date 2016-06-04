@@ -1,6 +1,7 @@
 package com.ctb.trust.core.repository;
 
-import com.ctb.trust.core.domain.Restaurant;
+import com.ctb.trust.core.restaurant.domain.Restaurant;
+import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
