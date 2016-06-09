@@ -16,12 +16,14 @@
         <tr>
             <th>Name</th>
             <th>Landmarks</th>
+            <th>Menu</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="restaurant : ${restaurants}">
             <td th:text="${restaurant.name}"></td>
             <td><span th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></span></td>
+            <td th:text="${restaurant.menu}"></td>
         </tr>
         </tbody>
     </table>

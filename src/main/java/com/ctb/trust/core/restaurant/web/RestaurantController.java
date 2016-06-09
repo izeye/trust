@@ -1,7 +1,10 @@
 package com.ctb.trust.core.restaurant.web;
 
+import com.ctb.trust.core.restaurant.domain.FoodType;
 import com.ctb.trust.core.restaurant.domain.Landmark;
+import com.ctb.trust.core.restaurant.domain.MenuItem;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
+import com.ctb.trust.core.restaurant.service.FoodTypeService;
 import com.ctb.trust.core.restaurant.service.LandmarkService;
 import com.ctb.trust.core.restaurant.service.RestaurantService;
 import com.ctb.trust.support.message.domain.Message;
@@ -11,10 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -31,6 +36,9 @@ public class RestaurantController {
 	
 	@Autowired
 	private LandmarkService landmarkService;
+	
+	@Autowired
+	private FoodTypeService foodTypeService;
 	
 	@Autowired
 	private MessageService messageService;
@@ -50,12 +58,28 @@ public class RestaurantController {
 	}
 
 	@PostMapping("/add")
-	public String add(@RequestParam String name, @RequestParam String landmarks) {
+	public String add(
+			@RequestParam String name,
+			@RequestParam String landmarks,
+			@RequestParam String menuItem1Name,
+			@RequestParam String menuItem1FoodTypeName,
+			@RequestParam Integer menuItem1Price) {
 		Restaurant restaurant = new Restaurant();
 		restaurant.setName(name);
 
 		Set<Landmark> landmarkSet = getLandmarkSet(landmarks);
 		restaurant.setLandmarks(landmarkSet);
+
+		// TODO: Support multiple menu items.
+		Set<MenuItem> menu = new HashSet<>();
+		MenuItem menuItem1 = new MenuItem();
+		menuItem1.setName(menuItem1Name);
+		
+		FoodType menuItem1FoodType = getFoodType(menuItem1FoodTypeName);
+		menuItem1.setFoodType(menuItem1FoodType);
+		menuItem1.setPrice(menuItem1Price);
+		menu.add(menuItem1);
+		restaurant.setMenu(menu);
 		
 		this.restaurantService.add(restaurant);
 		return "redirect:list";
@@ -74,6 +98,16 @@ public class RestaurantController {
 			landmarkSet.add(landmark);
 		}
 		return landmarkSet;
+	}
+
+	private FoodType getFoodType(String foodTypeName) {
+		FoodType foodType = this.foodTypeService.findByName(foodTypeName);
+		if (foodType == null) {
+			foodType = new FoodType();
+			foodType.setName(foodTypeName);
+			this.foodTypeService.add(foodType);
+		}
+		return foodType;
 	}
 
 }

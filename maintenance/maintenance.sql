@@ -1,1 +1,1 @@
-DROP TABLE restaurant_landmarks, restaurant, landmark;
+DROP TABLE restaurant_landmarks, restaurant_menu, landmark, menu_item, food_type, restaurant;
