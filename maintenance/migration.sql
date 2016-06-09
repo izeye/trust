@@ -1,3 +1,24 @@
+-- 2016-06-09 2nd
+mysql> INSERT INTO food_type (name) VALUES ('돈까스');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO food_type (name) VALUES ('함박 스테이크');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO menu_item (name, price, food_type_id) VALUES ('생등심 돈까스', 7000, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO menu_item (name, price, food_type_id) VALUES ('램버그스테이크', 10000, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO restaurant_menu VALUES (1, 1);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO restaurant_menu VALUES (8, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
 -- 2016-06-09
 mysql> INSERT INTO landmark (name) VALUES ('오리역');
 Query OK, 1 row affected (0.00 sec)
