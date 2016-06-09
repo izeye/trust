@@ -6,24 +6,19 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.Set;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Created by izeye on 16. 6. 9..
  */
 @Data
 @Entity
-public class Restaurant {
-	
+public class Landmark {
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column(unique = true)
 	private String name;
-	
-	@ManyToMany
-	private Set<Landmark> landmarks;
 	
 }
