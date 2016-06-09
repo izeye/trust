@@ -38,7 +38,6 @@ public class RestaurantRepositoryTests {
 		landmark2.setName("그린팩토리");
 		landmarks.add(landmark1);
 		landmarks.add(landmark2);
-		
 		restaurant.setLandmarks(landmarks);
 		
 		this.restaurantRepository.save(restaurant);
