@@ -1,3 +1,22 @@
+-- 2016-06-10
+mysql> UPDATE restaurant SET rating_score = 4 WHERE id = 1;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE restaurant SET rating_score = 3 WHERE id = 8;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE menu_item SET rating_score = 4 WHERE id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE menu_item SET rating_score = 3 WHERE id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
 -- 2016-06-09 2nd
 mysql> INSERT INTO food_type (name) VALUES ('돈까스');
 Query OK, 1 row affected (0.00 sec)
