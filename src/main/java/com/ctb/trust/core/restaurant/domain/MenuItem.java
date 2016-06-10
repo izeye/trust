@@ -26,4 +26,6 @@ public class MenuItem {
 	// TODO: Support multiple currencies. Let's assume won for now.
 	private Integer price;
 	
+	private RatingScore ratingScore;
+	
 }

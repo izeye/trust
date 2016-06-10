@@ -20,10 +20,28 @@
             <input type="text" id="landmarks" name="landmarks" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="landmarks">Menu: </label>
+            <label for="landmarks">Rating: </label>
+            <select id="rating" name="rating" class="form-control">
+                <option th:each="ratingScore : ${ratingScores}" th:value="${ratingScore}" th:text="${ratingScore}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="landmarks">Menu item 1 name: </label>
             <input type="text" id="menuItem1Name" name="menuItem1Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="landmarks">Menu item 1 food type: </label>
             <input type="text" id="menuItem1FoodTypeName" name="menuItem1FoodTypeName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="landmarks">Menu item 1 price: </label>
             <input type="text" id="menuItem1Price" name="menuItem1Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="landmarks">Menu item 1 rating: </label>
+            <select id="menuItem1Rating" name="menuItem1Rating" class="form-control">
+                <option th:each="ratingScore : ${ratingScores}" th:value="${ratingScore}" th:text="${ratingScore}"></option>
+            </select>
         </div>
         <input type="submit" />
     </form>

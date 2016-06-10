@@ -31,4 +31,6 @@ public class Restaurant {
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<MenuItem> menu;
 	
+	private RatingScore ratingScore;
+	
 }

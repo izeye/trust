@@ -3,6 +3,7 @@ package com.ctb.trust.core.restaurant.web;
 import com.ctb.trust.core.restaurant.domain.FoodType;
 import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.domain.MenuItem;
+import com.ctb.trust.core.restaurant.domain.RatingScore;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
 import com.ctb.trust.core.restaurant.service.FoodTypeService;
 import com.ctb.trust.core.restaurant.service.LandmarkService;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,7 +53,8 @@ public class RestaurantController {
 	}
 
 	@GetMapping("/add")
-	public String add() {
+	public String add(Model model) {
+		model.addAttribute("ratingScores", RatingScore.values());
 		return "restaurants/add";
 	}
 
@@ -61,14 +62,17 @@ public class RestaurantController {
 	public String add(
 			@RequestParam String name,
 			@RequestParam String landmarks,
+			@RequestParam RatingScore rating,
 			@RequestParam String menuItem1Name,
 			@RequestParam String menuItem1FoodTypeName,
-			@RequestParam Integer menuItem1Price) {
+			@RequestParam Integer menuItem1Price,
+			@RequestParam RatingScore menuItem1Rating) {
 		Restaurant restaurant = new Restaurant();
 		restaurant.setName(name);
 
 		Set<Landmark> landmarkSet = getLandmarkSet(landmarks);
 		restaurant.setLandmarks(landmarkSet);
+		restaurant.setRatingScore(rating);
 
 		// TODO: Support multiple menu items.
 		Set<MenuItem> menu = new HashSet<>();
@@ -78,6 +82,7 @@ public class RestaurantController {
 		FoodType menuItem1FoodType = getFoodType(menuItem1FoodTypeName);
 		menuItem1.setFoodType(menuItem1FoodType);
 		menuItem1.setPrice(menuItem1Price);
+		menuItem1.setRatingScore(menuItem1Rating);
 		menu.add(menuItem1);
 		restaurant.setMenu(menu);
 		
