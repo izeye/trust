@@ -16,6 +16,9 @@ public class RatingScoreConverter implements AttributeConverter<RatingScore, Int
 
 	@Override
 	public RatingScore convertToEntityAttribute(Integer dbData) {
+		if (dbData == null) {
+			return null;
+		}
 		return RatingScore.getValueByScore(dbData);
 	}
 	
