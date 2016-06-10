@@ -1,3 +1,28 @@
+-- 2016-06-10 2nd
+mysql> INSERT INTO restaurant_landmarks VALUES (9, 6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO menu_item (name, price, food_type_id, rating_score) VALUES ('참명란비빔밥', 8000, 3, 4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO restaurant_menu VALUES (9, 5);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> UPDATE restaurant SET name = '할머니의 레시피' WHERE id = 10;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> INSERT INTO food_type (name) VALUES ('불고기');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO menu_item (name, price, food_type_id, rating_score) VALUES ('바싹불고기', 22000, 5, 4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO restaurant_menu VALUES (10, 6);
+Query OK, 1 row affected (0.03 sec)
+
+mysql>
+
 -- 2016-06-10
 mysql> UPDATE restaurant SET rating_score = 4 WHERE id = 1;
 Query OK, 1 row affected (0.04 sec)
