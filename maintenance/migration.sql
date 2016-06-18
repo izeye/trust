@@ -1,3 +1,15 @@
+-- 2016-06-18
+mysql> INSERT INTO food_type (name) VALUES ('비빔 냉면');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO menu_item (name, price, food_type_id, rating_score) VALUES ('비빔냉면', 8500, 12, 4);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO restaurant_menu VALUES (18, 15);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
 -- 2016-06-10 2nd
 mysql> INSERT INTO restaurant_landmarks VALUES (9, 6);
 Query OK, 1 row affected (0.01 sec)
