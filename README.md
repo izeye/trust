@@ -1,5 +1,7 @@
 # trust
 
+[![Join the chat at https://gitter.im/izeye/trust](https://badges.gitter.im/izeye/trust.svg)](https://gitter.im/izeye/trust?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Technology stack
 
 ### Language
