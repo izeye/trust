@@ -56,6 +56,11 @@ public class RestaurantRepositoryTests {
 		assertThat(found).isEqualTo(restaurant);
 	}
 
+	@Test
+	public void testFindAll() {
+		this.restaurantRepository.findAll().forEach(System.out::println);
+	}
+
 	private Set<Landmark> getLandmarks() {
 		Landmark landmark1 = new Landmark();
 		landmark1.setName("정자역");
