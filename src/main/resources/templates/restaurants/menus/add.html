@@ -20,38 +20,30 @@
 </head>
 <body>
 <div class="container">
-    <h1>Add Restaurant</h1>
+    <h1>Add Menu</h1>
     
-    <form action="#" th:action="@{/restaurants/add}" method="post">
+    <form action="#" th:action="@{/restaurants/menus/add}" method="post">
         <div class="form-group">
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label for="landmarks">Landmarks: </label>
-            <input type="text" id="landmarks" name="landmarks" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label for="rating">Rating: </label>
-            <select id="rating" name="rating" class="form-control">
-                <option th:each="ratingScore : ${ratingScores}" th:value="${ratingScore}" th:text="${ratingScore}"></option>
+            <label for="restaurantId">Restaurant: </label>
+            <select id="restaurantId" name="restaurantId" class="form-control">
+                <option th:each="restaurant : ${restaurants}" th:value="${restaurant.id}" th:text="${restaurant.name}"></option>
             </select>
         </div>
         <div class="form-group">
-            <label for="menuItem1Name">Menu item 1 name: </label>
-            <input type="text" id="menuItem1Name" name="menuItem1Name" class="form-control" />
+            <label for="menuItemName">Menu item name: </label>
+            <input type="text" id="menuItemName" name="menuItemName" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="menuItem1FoodTypeName">Menu item 1 food type: </label>
-            <input type="text" id="menuItem1FoodTypeName" name="menuItem1FoodTypeName" class="form-control" />
+            <label for="menuItemFoodTypeName">Menu item food type: </label>
+            <input type="text" id="menuItemFoodTypeName" name="menuItemFoodTypeName" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="menuItem1Price">Menu item 1 price: </label>
-            <input type="text" id="menuItem1Price" name="menuItem1Price" class="form-control" />
+            <label for="menuItemPrice">Menu item price: </label>
+            <input type="text" id="menuItemPrice" name="menuItemPrice" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="menuItem1Rating">Menu item 1 rating: </label>
-            <select id="menuItem1Rating" name="menuItem1Rating" class="form-control">
+            <label for="menuItemRating">Menu item rating: </label>
+            <select id="menuItemRating" name="menuItemRating" class="form-control">
                 <option th:each="ratingScore : ${ratingScores}" th:value="${ratingScore}" th:text="${ratingScore}"></option>
             </select>
         </div>

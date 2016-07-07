@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -74,7 +73,6 @@ public class RestaurantController {
 		restaurant.setLandmarks(landmarkSet);
 		restaurant.setRatingScore(rating);
 
-		// TODO: Support multiple menu items.
 		Set<MenuItem> menu = new HashSet<>();
 		MenuItem menuItem1 = new MenuItem();
 		menuItem1.setName(menuItem1Name);
@@ -86,8 +84,38 @@ public class RestaurantController {
 		menu.add(menuItem1);
 		restaurant.setMenu(menu);
 		
-		this.restaurantService.add(restaurant);
+		this.restaurantService.save(restaurant);
 		return "redirect:list";
+	}
+	
+	@GetMapping("/menus/add")
+	public String addMenu(Model model) {
+		List<Restaurant> restaurants = this.restaurantService.findAll();
+		model.addAttribute("restaurants", restaurants);
+		model.addAttribute("ratingScores", RatingScore.values());
+		return "restaurants/menus/add";
+	}
+	
+	@PostMapping("/menus/add")
+	public String addMenu(
+			@RequestParam long restaurantId,
+			@RequestParam String menuItemName,
+			@RequestParam String menuItemFoodTypeName,
+			@RequestParam Integer menuItemPrice,
+			@RequestParam RatingScore menuItemRating) {
+		Restaurant restaurant = this.restaurantService.findById(restaurantId);
+		
+		MenuItem menuItem = new MenuItem();
+		menuItem.setName(menuItemName);
+
+		FoodType menuItemFoodType = getFoodType(menuItemFoodTypeName);
+		menuItem.setFoodType(menuItemFoodType);
+		menuItem.setPrice(menuItemPrice);
+		menuItem.setRatingScore(menuItemRating);
+		restaurant.getMenu().add(menuItem);
+
+		this.restaurantService.save(restaurant);
+		return "redirect:/restaurants/list";
 	}
 
 	private Set<Landmark> getLandmarkSet(String landmarks) {

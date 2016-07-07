@@ -11,6 +11,8 @@ public interface RestaurantService {
 	
 	List<Restaurant> findAll();
 	
-	void add(Restaurant restaurant);
+	Restaurant findById(long id);
+	
+	void save(Restaurant restaurant);
 	
 }
