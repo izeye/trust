@@ -34,3 +34,4 @@
 
 ### Storage
 * MySQL
+* H2 (test only)
