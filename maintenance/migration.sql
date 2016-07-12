@@ -1,3 +1,10 @@
+-- 2016-07-12
+mysql> UPDATE restaurant_menu SET restaurant_id = 31 WHERE menu_id = 37;                                        
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
 -- 2016-06-18
 mysql> INSERT INTO food_type (name) VALUES ('비빔 냉면');
 Query OK, 1 row affected (0.00 sec)

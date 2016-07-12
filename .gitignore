@@ -1,3 +1,9 @@
 # Created by .gitignore support plugin (hsz.mobi)
 .idea
 trust.iml
+
+.gradle
+.settings
+/bin/
+.classpath
+.project
