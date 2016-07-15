@@ -12,3 +12,4 @@ logs
 application.out
 application.pid
 event.log
+gc.log
