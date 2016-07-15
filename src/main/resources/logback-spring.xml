@@ -67,6 +67,8 @@
         <appender-ref ref="WARN_LOG_APPENDER" />
         <appender-ref ref="ERROR_LOG_APPENDER" />
         
-        <appender-ref ref="CONSOLE" />
+        <springProfile name="local">
+            <appender-ref ref="CONSOLE" />
+        </springProfile>
     </root>
 </configuration>
