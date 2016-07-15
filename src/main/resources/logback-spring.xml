@@ -54,7 +54,7 @@
         </rollingPolicy>
 
         <encoder>
-            <pattern>${MDC_ENABLED_FILE_LOG_PATTERN}</pattern>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
             <charset>utf8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
