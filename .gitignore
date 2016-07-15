@@ -8,6 +8,7 @@ trust.iml
 .classpath
 .project
 
+logs
 application.out
 application.pid
-logs
+event.log
