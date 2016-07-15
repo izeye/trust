@@ -1,15 +1,17 @@
 # Created by .gitignore support plugin (hsz.mobi)
-.idea
-trust.iml
+build/
 
-.gradle
-.settings
-/bin/
-.classpath
-.project
-
-logs
+logs/
 application.out
 application.pid
 event.log
 gc.log
+
+.idea/
+trust.iml
+
+.gradle/
+.settings/
+bin/
+.classpath
+.project
