@@ -7,3 +7,7 @@ trust.iml
 /bin/
 .classpath
 .project
+
+application.out
+application.pid
+logs
