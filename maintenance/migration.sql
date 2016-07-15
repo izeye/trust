@@ -1,3 +1,10 @@
+-- 2016-07-15
+mysql> UPDATE menu_item SET name = '데리야끼 우삽겹 덮밥 (미국산)' WHERE id = 40;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
 -- 2016-07-12
 mysql> UPDATE restaurant_menu SET restaurant_id = 31 WHERE menu_id = 37;                                        
 Query OK, 1 row affected (0.09 sec)
