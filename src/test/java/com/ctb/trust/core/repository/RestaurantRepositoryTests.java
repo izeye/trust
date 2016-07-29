@@ -39,7 +39,9 @@ import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Tests for restaurant repository.
+ *
+ * @author Johnny Lim
  */
 @RunWith(SpringRunner.class)
 @DataJpaTest

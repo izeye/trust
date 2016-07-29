@@ -20,7 +20,9 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
 /**
- * Created by izeye on 16. 6. 10..
+ * Converter between score value and enum value.
+ *
+ * @author Johnny Lim
  */
 @Converter(autoApply = true)
 public class RatingScoreConverter implements AttributeConverter<RatingScore, Integer> {

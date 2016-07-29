@@ -24,7 +24,9 @@ import javax.persistence.ManyToOne;
 import lombok.Data;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Menu item served by a restaurant.
+ *
+ * @author Johnny Lim
  */
 @Data
 @Entity

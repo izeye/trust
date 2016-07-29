@@ -21,7 +21,9 @@ import java.util.List;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Service interface for restaurants.
+ *
+ * @author Johnny Lim
  */
 public interface RestaurantService {
 	

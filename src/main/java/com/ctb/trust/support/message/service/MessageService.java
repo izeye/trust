@@ -21,7 +21,9 @@ import java.util.List;
 import com.ctb.trust.support.message.domain.Message;
 
 /**
- * Created by izeye on 16. 6. 4..
+ * Service interface for messages.
+ *
+ * @author Johnny Lim
  */
 public interface MessageService {
 

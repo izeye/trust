@@ -75,10 +75,16 @@
         <module name="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck" />
         <module name="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck" />
         <module name="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck">
-            <property name="groups" value="java,/^javax?\./,org.springframework,*,com.ctb" />
+            <property name="groups" value="java,javax,org.springframework,*,com.ctb" />
             <property name="separated" value="true" />
             <property name="option" value="bottom" />
             <property name="sortStaticImportsAlphabetically" value="true" />
+        </module>
+
+        <!-- Javadoc Comments -->
+        <module name="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck">
+            <property name="scope" value="package"/>
+            <property name="authorFormat" value=".+\s.+"/>
         </module>
     </module>
     

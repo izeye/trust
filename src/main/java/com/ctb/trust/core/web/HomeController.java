@@ -21,7 +21,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Controller for home.
+ *
+ * @author Johnny Lim
  */
 @Controller
 public class HomeController {

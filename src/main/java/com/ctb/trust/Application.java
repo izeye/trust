@@ -20,7 +20,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Bootstrap class.
+ *
+ * @author Johnny Lim
  */
 @SpringBootApplication
 public class Application {

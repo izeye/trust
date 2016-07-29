@@ -28,7 +28,9 @@ import com.ctb.trust.support.message.domain.Message;
 import com.ctb.trust.support.message.service.MessageService;
 
 /**
- * Created by izeye on 16. 6. 4..
+ * Controller for messages.
+ *
+ * @author Johnny Lim
  */
 @Controller
 @RequestMapping(path = "/messages")

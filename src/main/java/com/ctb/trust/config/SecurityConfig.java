@@ -23,7 +23,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * Created by izeye on 16. 6. 6..
+ * Configuration for security.
+ *
+ * @author Johnny Lim
  */
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)

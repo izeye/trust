@@ -21,7 +21,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Repository class for restaurants.
+ *
+ * @author Johnny Lim
  */
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 }

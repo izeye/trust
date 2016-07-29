@@ -26,7 +26,9 @@ import com.ctb.trust.support.message.domain.Message;
 import com.ctb.trust.support.message.repository.MessageRepository;
 
 /**
- * Created by izeye on 16. 6. 4..
+ * Default service for messages.
+ *
+ * @author Johnny Lim
  */
 @Service
 public class DefaultMessageService implements MessageService {

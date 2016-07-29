@@ -23,7 +23,9 @@ import javax.persistence.Id;
 import lombok.Data;
 
 /**
- * Created by izeye on 16. 6. 4..
+ * Message.
+ *
+ * @author Johnny Lim
  */
 @Data
 @Entity

@@ -21,7 +21,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ctb.trust.core.restaurant.domain.Landmark;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Repository class for landmarks.
+ *
+ * @author Johnny Lim
  */
 public interface LandmarkRepository extends JpaRepository<Landmark, Long> {
 

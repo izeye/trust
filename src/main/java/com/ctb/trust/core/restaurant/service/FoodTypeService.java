@@ -19,7 +19,9 @@ package com.ctb.trust.core.restaurant.service;
 import com.ctb.trust.core.restaurant.domain.FoodType;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Service interface for food types.
+ *
+ * @author Johnny Lim
  */
 public interface FoodTypeService {
 

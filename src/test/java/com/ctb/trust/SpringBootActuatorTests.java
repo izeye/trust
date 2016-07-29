@@ -34,7 +34,9 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by izeye on 16. 6. 13..
+ * Tests for Spring Boot Actuator.
+ *
+ * @author Johnny Lim
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

@@ -29,7 +29,9 @@ import javax.persistence.OneToMany;
 import lombok.Data;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Restaurant.
+ *
+ * @author Johnny Lim
  */
 @Data
 @Entity

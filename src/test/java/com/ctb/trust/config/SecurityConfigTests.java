@@ -28,7 +28,9 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by izeye on 16. 6. 6..
+ * Tests for security configuration.
+ *
+ * @author Johnny Lim
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

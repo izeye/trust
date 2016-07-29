@@ -21,7 +21,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ctb.trust.core.restaurant.domain.FoodType;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Repository class for food types.
+ *
+ * @author Johnny Lim
  */
 public interface FoodTypeRepository extends JpaRepository<FoodType, Long> {
 

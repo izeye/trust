@@ -21,7 +21,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ctb.trust.support.message.domain.Message;
 
 /**
- * Created by izeye on 16. 6. 4..
+ * Repository for messages.
+ *
+ * @author Johnny Lim
  */
 public interface MessageRepository extends JpaRepository<Message, Long> {
 }

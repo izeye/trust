@@ -21,7 +21,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by izeye on 16. 6. 10..
+ * Rating scored by a user.
+ *
+ * @author Johnny Lim
  */
 public enum RatingScore {
 

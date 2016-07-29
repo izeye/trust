@@ -23,7 +23,9 @@ import com.ctb.trust.core.restaurant.domain.FoodType;
 import com.ctb.trust.core.restaurant.repository.FoodTypeRepository;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Default service for food types.
+ *
+ * @author Johnny Lim
  */
 @Service
 public class DefaultFoodTypeService implements FoodTypeService {

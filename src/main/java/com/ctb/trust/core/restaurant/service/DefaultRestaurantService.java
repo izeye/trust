@@ -25,7 +25,9 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
 import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 
 /**
- * Created by izeye on 16. 6. 3..
+ * Default service for restaurants.
+ *
+ * @author Johnny Lim
  */
 @Service
 public class DefaultRestaurantService implements RestaurantService {

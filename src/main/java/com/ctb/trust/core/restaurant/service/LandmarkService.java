@@ -19,7 +19,9 @@ package com.ctb.trust.core.restaurant.service;
 import com.ctb.trust.core.restaurant.domain.Landmark;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Service interface for landmarks.
+ *
+ * @author Johnny Lim
  */
 public interface LandmarkService {
 	

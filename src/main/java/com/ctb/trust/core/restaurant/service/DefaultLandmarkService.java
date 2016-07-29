@@ -23,7 +23,9 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Default service for landmarks.
+ *
+ * @author Johnny Lim
  */
 @Service
 public class DefaultLandmarkService implements LandmarkService {

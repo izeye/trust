@@ -24,7 +24,9 @@ import javax.persistence.Id;
 import lombok.Data;
 
 /**
- * Created by izeye on 16. 6. 9..
+ * Landmark around a restaurant.
+ *
+ * @author Johnny Lim
  */
 @Data
 @Entity
