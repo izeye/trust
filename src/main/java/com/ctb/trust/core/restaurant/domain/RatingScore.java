@@ -27,7 +27,30 @@ import java.util.Map;
  */
 public enum RatingScore {
 
-	BAD(1), SO_SO(2), GOOD(3), VERY_GOOD(4), EXCELLENT(5);
+	/**
+	 * Bad.
+	 */
+	BAD(1),
+	
+	/**
+	 * So so.
+	 */
+	SO_SO(2),
+
+	/**
+	 * Good.
+	 */
+	GOOD(3),
+
+	/**
+	 * Very good.
+	 */
+	VERY_GOOD(4),
+
+	/**
+	 * Excellent.
+	 */
+	EXCELLENT(5);
 	
 	private static final Map<Integer, RatingScore> VALUE_BY_SCORE;
 	
