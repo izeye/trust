@@ -65,6 +65,12 @@
             <property name="checkMethods" value="false" />
         </module>
         <module name="com.puppycrawl.tools.checkstyle.checks.coding.OneStatementPerLineCheck" />
+
+        <!-- Imports -->
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStaticImportCheck">
+            <property name="excludes" value="org.assertj.core.api.Assertions.*" />
+        </module>
     </module>
     
     <module name="com.puppycrawl.tools.checkstyle.filters.SuppressionFilter">
