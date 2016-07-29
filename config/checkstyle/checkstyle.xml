@@ -71,6 +71,15 @@
         <module name="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStaticImportCheck">
             <property name="excludes" value="org.assertj.core.api.Assertions.*" />
         </module>
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.IllegalImportCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck">
+            <property name="groups" value="java,/^javax?\./,org.springframework,*,com.ctb" />
+            <property name="separated" value="true" />
+            <property name="option" value="bottom" />
+            <property name="sortStaticImportsAlphabetically" value="true" />
+        </module>
     </module>
     
     <module name="com.puppycrawl.tools.checkstyle.filters.SuppressionFilter">

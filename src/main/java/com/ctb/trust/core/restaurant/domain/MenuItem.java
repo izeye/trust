@@ -16,12 +16,12 @@
 
 package com.ctb.trust.core.restaurant.domain;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import lombok.Data;
 
 /**
  * Created by izeye on 16. 6. 9..

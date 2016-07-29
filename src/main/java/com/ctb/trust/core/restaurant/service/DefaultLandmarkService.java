@@ -16,10 +16,11 @@
 
 package com.ctb.trust.core.restaurant.service;
 
-import com.ctb.trust.core.restaurant.domain.Landmark;
-import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.ctb.trust.core.restaurant.domain.Landmark;
+import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 
 /**
  * Created by izeye on 16. 6. 9..

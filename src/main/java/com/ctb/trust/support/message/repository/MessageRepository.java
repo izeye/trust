@@ -16,8 +16,9 @@
 
 package com.ctb.trust.support.message.repository;
 
-import com.ctb.trust.support.message.domain.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ctb.trust.support.message.domain.Message;
 
 /**
  * Created by izeye on 16. 6. 4..

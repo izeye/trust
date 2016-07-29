@@ -16,8 +16,9 @@
 
 package com.ctb.trust.core.restaurant.repository;
 
-import com.ctb.trust.core.restaurant.domain.FoodType;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ctb.trust.core.restaurant.domain.FoodType;
 
 /**
  * Created by izeye on 16. 6. 9..

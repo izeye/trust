@@ -16,9 +16,9 @@
 
 package com.ctb.trust.support.message.service;
 
-import com.ctb.trust.support.message.domain.Message;
-
 import java.util.List;
+
+import com.ctb.trust.support.message.domain.Message;
 
 /**
  * Created by izeye on 16. 6. 4..

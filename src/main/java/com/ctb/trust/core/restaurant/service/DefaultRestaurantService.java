@@ -16,12 +16,13 @@
 
 package com.ctb.trust.core.restaurant.service;
 
-import com.ctb.trust.core.restaurant.domain.Restaurant;
-import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.ctb.trust.core.restaurant.domain.Restaurant;
+import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 
 /**
  * Created by izeye on 16. 6. 3..

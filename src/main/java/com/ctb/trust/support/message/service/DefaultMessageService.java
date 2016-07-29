@@ -16,13 +16,14 @@
 
 package com.ctb.trust.support.message.service;
 
-import com.ctb.trust.support.message.domain.Message;
-import com.ctb.trust.support.message.repository.MessageRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.ctb.trust.support.message.domain.Message;
+import com.ctb.trust.support.message.repository.MessageRepository;
 
 /**
  * Created by izeye on 16. 6. 4..

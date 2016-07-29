@@ -16,6 +16,17 @@
 
 package com.ctb.trust.core.repository;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import com.ctb.trust.core.restaurant.domain.FoodType;
 import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.domain.MenuItem;
@@ -24,15 +35,6 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
 import com.ctb.trust.core.restaurant.repository.FoodTypeRepository;
 import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

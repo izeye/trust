@@ -16,7 +16,7 @@
 
 package com.ctb.trust.core.restaurant.domain;
 
-import lombok.Data;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -25,7 +25,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import java.util.Set;
+
+import lombok.Data;
 
 /**
  * Created by izeye on 16. 6. 3..

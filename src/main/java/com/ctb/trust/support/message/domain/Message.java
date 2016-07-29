@@ -16,11 +16,11 @@
 
 package com.ctb.trust.support.message.domain;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import lombok.Data;
 
 /**
  * Created by izeye on 16. 6. 4..

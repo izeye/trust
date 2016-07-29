@@ -16,9 +16,9 @@
 
 package com.ctb.trust.core.restaurant.service;
 
-import com.ctb.trust.core.restaurant.domain.Restaurant;
-
 import java.util.List;
+
+import com.ctb.trust.core.restaurant.domain.Restaurant;
 
 /**
  * Created by izeye on 16. 6. 3..
