@@ -42,8 +42,9 @@ dependencies {
     compile("mysql:mysql-connector-java")
 //    runtime("com.h2database:h2")
     
+    compile("org.webjars:webjars-locator")
+    
     compile("org.webjars:bootstrap:${bootstrapVersion}")
-    compile("org.webjars:webjars-locator:${webjarsLocatorVersion}")
 
     provided("org.projectlombok:lombok")
 
@@ -55,11 +56,17 @@ springBoot {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
+    gradleVersion = '2.14.1'
 }
 
 tasks.withType(JavaCompile) {
     options.compilerArgs << '-Xlint:unchecked'
 }
 
-project.checkstyle.toolVersion = '7.0'
+checkstyle {
+    toolVersion = '7.0'
+    configProperties = [
+        'headerLocation': 'config/checkstyle/checkstyle-header.txt',
+        'suppressionsLocation': 'config/checkstyle/checkstyle-suppressions.xml'
+    ]
+}

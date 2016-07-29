@@ -5,7 +5,7 @@
 <module name="com.puppycrawl.tools.checkstyle.Checker">
     <!-- Root Checks -->
     <module name="com.puppycrawl.tools.checkstyle.checks.header.RegexpHeaderCheck">
-        <property name="headerFile" value="config/checkstyle/checkstyle-header.txt" />
+        <property name="headerFile" value="${headerLocation}" />
         <property name="fileExtensions" value="java" />
     </module>
     <module name="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck">
@@ -38,5 +38,10 @@
         <!-- Class Design -->
         <module name="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck" />
         <module name="com.puppycrawl.tools.checkstyle.checks.design.InterfaceIsTypeCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck" />
+    </module>
+    
+    <module name="com.puppycrawl.tools.checkstyle.filters.SuppressionFilter">
+        <property name="file" value="${suppressionsLocation}" />
     </module>
 </module>
