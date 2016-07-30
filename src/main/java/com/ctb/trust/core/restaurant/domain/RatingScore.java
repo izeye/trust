@@ -64,7 +64,7 @@ public enum RatingScore {
 
 	private final int score;
 
-	private RatingScore(int score) {
+	RatingScore(int score) {
 		this.score = score;
 	}
 
