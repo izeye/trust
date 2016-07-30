@@ -29,10 +29,10 @@ public interface FoodTypeRepository extends JpaRepository<FoodType, Long> {
 
 	/**
 	 * Find a food type by a name.
-	 * 
+	 *
 	 * @param name a name to find for a {@link FoodType food type}
 	 * @return found food type
 	 */
 	FoodType findByName(String name);
-	
+
 }

@@ -30,5 +30,5 @@ public interface MessageService {
 	List<Message> findAllInReverseOrder();
 
 	void add(Message message);
-	
+
 }

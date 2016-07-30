@@ -28,5 +28,5 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
 public interface LandmarkRepository extends JpaRepository<Landmark, Long> {
 
 	Landmark findByName(String name);
-	
+
 }

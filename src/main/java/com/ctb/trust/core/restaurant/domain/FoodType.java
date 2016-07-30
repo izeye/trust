@@ -38,5 +38,5 @@ public class FoodType {
 
 	@Column(unique = true)
 	private String name;
-	
+
 }

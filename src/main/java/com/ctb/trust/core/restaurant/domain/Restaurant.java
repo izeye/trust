@@ -36,20 +36,20 @@ import lombok.Data;
 @Data
 @Entity
 public class Restaurant {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column(unique = true)
 	private String name;
-	
+
 	@ManyToMany
 	private Set<Landmark> landmarks;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<MenuItem> menu;
-	
+
 	private RatingScore ratingScore;
-	
+
 }

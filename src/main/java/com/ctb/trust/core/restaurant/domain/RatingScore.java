@@ -31,7 +31,7 @@ public enum RatingScore {
 	 * Bad.
 	 */
 	BAD(1),
-	
+
 	/**
 	 * So so.
 	 */
@@ -51,9 +51,9 @@ public enum RatingScore {
 	 * Excellent.
 	 */
 	EXCELLENT(5);
-	
+
 	private static final Map<Integer, RatingScore> VALUE_BY_SCORE;
-	
+
 	static {
 		Map<Integer, RatingScore> valueByScore = new HashMap<>();
 		for (RatingScore value : values()) {
@@ -71,7 +71,7 @@ public enum RatingScore {
 	public int getScore() {
 		return score;
 	}
-	
+
 	public static RatingScore getValueByScore(int score) {
 		return VALUE_BY_SCORE.get(score);
 	}

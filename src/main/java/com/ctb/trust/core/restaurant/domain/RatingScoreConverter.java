@@ -26,7 +26,7 @@ import javax.persistence.Converter;
  */
 @Converter(autoApply = true)
 public class RatingScoreConverter implements AttributeConverter<RatingScore, Integer> {
-	
+
 	@Override
 	public Integer convertToDatabaseColumn(RatingScore attribute) {
 		return attribute.getScore();
@@ -39,5 +39,5 @@ public class RatingScoreConverter implements AttributeConverter<RatingScore, Int
 		}
 		return RatingScore.getValueByScore(dbData);
 	}
-	
+
 }

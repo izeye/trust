@@ -41,34 +41,34 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SpringBootActuatorTests {
-	
+
 	@Value("${security.user.name}")
 	String username;
-	
+
 	@Value("${security.user.password}")
 	String password;
-	
+
 	@LocalServerPort
 	int port;
 
 	TestRestTemplate restTemplate;
-	
+
 	@Before
 	public void setUp() {
 		this.restTemplate = new TestRestTemplate(this.username, this.password);
 	}
-	
+
 	@Test
 	public void test() {
 		String url = "http://localhost:{port}/management/health";
-		
+
 		ResponseEntity<Map<String, Object>> response = this.restTemplate.exchange(
 				url, HttpMethod.GET, null, new ParameterizedTypeReference<Map<String, Object>>() {
 				}, this.port);
 		System.out.println(response);
-		
+
 		Map<String, Object> health = response.getBody();
 		assertThat(health.get("status")).isEqualTo("UP");
 	}
-	
+
 }

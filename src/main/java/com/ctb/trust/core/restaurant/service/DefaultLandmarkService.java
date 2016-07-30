@@ -29,10 +29,10 @@ import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
  */
 @Service
 public class DefaultLandmarkService implements LandmarkService {
-	
+
 	@Autowired
 	LandmarkRepository landmarkRepository;
-	
+
 	@Override
 	public Landmark findByName(String name) {
 		return this.landmarkRepository.findByName(name);
@@ -42,5 +42,5 @@ public class DefaultLandmarkService implements LandmarkService {
 	public void add(Landmark landmark) {
 		this.landmarkRepository.save(landmark);
 	}
-	
+
 }

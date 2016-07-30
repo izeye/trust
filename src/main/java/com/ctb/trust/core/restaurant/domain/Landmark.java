@@ -38,5 +38,5 @@ public class Landmark {
 
 	@Column(unique = true)
 	private String name;
-	
+
 }

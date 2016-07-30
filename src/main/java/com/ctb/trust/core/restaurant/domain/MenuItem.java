@@ -37,13 +37,13 @@ public class MenuItem {
 	private Long id;
 
 	private String name;
-	
+
 	@ManyToOne
 	private FoodType foodType;
-	
+
 	// TODO: Support multiple currencies. Let's assume won for now.
 	private Integer price;
-	
+
 	private RatingScore ratingScore;
-	
+
 }

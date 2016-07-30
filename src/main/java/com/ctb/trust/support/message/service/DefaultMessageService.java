@@ -32,9 +32,9 @@ import com.ctb.trust.support.message.repository.MessageRepository;
  */
 @Service
 public class DefaultMessageService implements MessageService {
-	
+
 	private static final Sort ID_DESC = new Sort(Sort.Direction.DESC, "id");
-	
+
 	@Autowired
 	private MessageRepository messageRepository;
 
@@ -47,5 +47,5 @@ public class DefaultMessageService implements MessageService {
 	public void add(Message message) {
 		this.messageRepository.save(message);
 	}
-	
+
 }

@@ -26,11 +26,11 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
  * @author Johnny Lim
  */
 public interface RestaurantService {
-	
+
 	List<Restaurant> findAll();
-	
+
 	Restaurant findById(long id);
-	
+
 	void save(Restaurant restaurant);
-	
+
 }

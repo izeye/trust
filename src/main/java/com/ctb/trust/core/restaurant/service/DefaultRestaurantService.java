@@ -31,10 +31,10 @@ import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
  */
 @Service
 public class DefaultRestaurantService implements RestaurantService {
-	
+
 	@Autowired
 	private RestaurantRepository restaurantRepository;
-	
+
 	@Override
 	public List<Restaurant> findAll() {
 		return this.restaurantRepository.findAll();
@@ -49,5 +49,5 @@ public class DefaultRestaurantService implements RestaurantService {
 	public void save(Restaurant restaurant) {
 		this.restaurantRepository.save(restaurant);
 	}
-	
+
 }

@@ -48,9 +48,9 @@ public class MessageController {
 	@PostMapping("/add")
 	public String add(Message message) {
 		log.info("Message: {}", message);
-		
+
 		this.messageService.add(message);
 		return "redirect:/";
 	}
-	
+
 }

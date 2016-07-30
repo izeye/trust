@@ -47,16 +47,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class RestaurantRepositoryTests {
-	
+
 	@Autowired
 	RestaurantRepository restaurantRepository;
-	
+
 	@Autowired
 	LandmarkRepository landmarkRepository;
-	
+
 	@Autowired
 	FoodTypeRepository foodTypeRepository;
-	
+
 	@Test
 	public void test() {
 		Restaurant restaurant = new Restaurant();
@@ -68,7 +68,7 @@ public class RestaurantRepositoryTests {
 		Set<MenuItem> menu = getMenu();
 		restaurant.setMenu(menu);
 		restaurant.setRatingScore(RatingScore.GOOD);
-		
+
 		this.restaurantRepository.save(restaurant);
 
 		Restaurant found = this.restaurantRepository.findOne(restaurant.getId());
@@ -99,13 +99,13 @@ public class RestaurantRepositoryTests {
 		FoodType foodType1 = new FoodType();
 		foodType1.setName("함박 스테이크");
 		this.foodTypeRepository.save(foodType1);
-		
+
 		MenuItem menuItem1 = new MenuItem();
 		menuItem1.setName("램버그스테이크");
 		menuItem1.setFoodType(foodType1);
 		menuItem1.setPrice(10000);
 		menuItem1.setRatingScore(RatingScore.GOOD);
-		
+
 		Set<MenuItem> menu = new HashSet<>();
 		menu.add(menuItem1);
 		return menu;

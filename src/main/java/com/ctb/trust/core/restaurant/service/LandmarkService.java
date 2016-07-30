@@ -24,9 +24,9 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
  * @author Johnny Lim
  */
 public interface LandmarkService {
-	
+
 	Landmark findByName(String name);
-	
+
 	void add(Landmark landmark);
-	
+
 }

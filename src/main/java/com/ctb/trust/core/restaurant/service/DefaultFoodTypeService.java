@@ -29,10 +29,10 @@ import com.ctb.trust.core.restaurant.repository.FoodTypeRepository;
  */
 @Service
 public class DefaultFoodTypeService implements FoodTypeService {
-	
+
 	@Autowired
 	private FoodTypeRepository foodTypeRepository;
-	
+
 	@Override
 	public FoodType findByName(String name) {
 		return this.foodTypeRepository.findByName(name);
@@ -42,5 +42,5 @@ public class DefaultFoodTypeService implements FoodTypeService {
 	public void add(FoodType foodType) {
 		this.foodTypeRepository.save(foodType);
 	}
-	
+
 }

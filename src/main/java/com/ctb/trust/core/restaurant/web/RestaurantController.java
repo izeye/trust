@@ -51,13 +51,13 @@ public class RestaurantController {
 
 	@Autowired
 	private RestaurantService restaurantService;
-	
+
 	@Autowired
 	private LandmarkService landmarkService;
-	
+
 	@Autowired
 	private FoodTypeService foodTypeService;
-	
+
 	@Autowired
 	private MessageService messageService;
 
@@ -95,18 +95,18 @@ public class RestaurantController {
 		Set<MenuItem> menu = new HashSet<>();
 		MenuItem menuItem1 = new MenuItem();
 		menuItem1.setName(menuItem1Name);
-		
+
 		FoodType menuItem1FoodType = getFoodType(menuItem1FoodTypeName);
 		menuItem1.setFoodType(menuItem1FoodType);
 		menuItem1.setPrice(menuItem1Price);
 		menuItem1.setRatingScore(menuItem1Rating);
 		menu.add(menuItem1);
 		restaurant.setMenu(menu);
-		
+
 		this.restaurantService.save(restaurant);
 		return "redirect:list";
 	}
-	
+
 	@GetMapping("/menus/add")
 	public String addMenu(Model model) {
 		List<Restaurant> restaurants = this.restaurantService.findAll();
@@ -114,7 +114,7 @@ public class RestaurantController {
 		model.addAttribute("ratingScores", RatingScore.values());
 		return "restaurants/menus/add";
 	}
-	
+
 	@PostMapping("/menus/add")
 	public String addMenu(
 			@RequestParam long restaurantId,
@@ -123,7 +123,7 @@ public class RestaurantController {
 			@RequestParam Integer menuItemPrice,
 			@RequestParam RatingScore menuItemRating) {
 		Restaurant restaurant = this.restaurantService.findById(restaurantId);
-		
+
 		MenuItem menuItem = new MenuItem();
 		menuItem.setName(menuItemName);
 

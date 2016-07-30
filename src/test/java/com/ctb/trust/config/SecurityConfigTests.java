@@ -35,14 +35,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SecurityConfigTests {
-	
+
 	@Autowired
 	RequestDataValueProcessor requestDataValueProcessor;
-	
+
 	@Test
 	public void testRequestDataValueProcessor() {
 		assertThat(this.requestDataValueProcessor)
 				.isInstanceOf(CsrfRequestDataValueProcessor.class);
 	}
-	
+
 }

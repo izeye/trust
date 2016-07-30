@@ -28,5 +28,5 @@ public interface FoodTypeService {
 	FoodType findByName(String name);
 
 	void add(FoodType foodType);
-	
+
 }
