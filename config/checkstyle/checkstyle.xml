@@ -119,6 +119,14 @@
 
         <!-- Modifiers -->
         <module name="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck" />
+
+        <!-- Regexp -->
+        <module name="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineJavaCheck">
+            <property name="format" value="^\t* +\t*\S" />
+            <property name="message"
+                      value="Line has leading space characters; indentation should be performed with tabs only." />
+            <property name="ignoreComments" value="true" />
+        </module>
     </module>
     
     <module name="com.puppycrawl.tools.checkstyle.filters.SuppressionFilter">
