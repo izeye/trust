@@ -142,6 +142,18 @@
             <property name="illegalPattern" value="true" />
             <property name="message" value="Trailing whitespace" />
         </module>
+
+        <!-- Whitespace -->
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceAfterCheck" >
+            <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS, ARRAY_DECLARATOR"/>
+        </module>
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceBeforeCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck" />
+        <module name="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck" />
     </module>
     
     <module name="com.puppycrawl.tools.checkstyle.filters.SuppressionFilter">
