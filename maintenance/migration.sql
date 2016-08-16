@@ -1,3 +1,15 @@
+-- 2016-08-16
+mysql> INSERT INTO restaurant_landmarks VALUES (44, 16);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DELETE FROM restaurant_landmarks WHERE landmarks_id=17;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> DELETE FROM landmark WHERE id=17;
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+
 -- 2016-07-15
 mysql> UPDATE menu_item SET name = '데리야끼 우삽겹 덮밥 (미국산)' WHERE id = 40;
 Query OK, 1 row affected (0.02 sec)
