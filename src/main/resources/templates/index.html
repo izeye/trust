@@ -20,27 +20,24 @@
 </head>
 <body>
 <div class="container">
-    <img th:src="@{/images/noodle.jpg}" />
-    <p />
     <h1>Restaurants</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Landmarks</th>
-            <th>Rating</th>
-            <th>Menu</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="restaurant : ${restaurants}">
-            <td th:text="${restaurant.name}"></td>
-            <td><span th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></span></td>
-            <td th:text="${restaurant.ratingScore}"></td>
-            <td th:text="${restaurant.menu}"></td>
-        </tr>
-        </tbody>
-    </table>
+    <ul class="list-group">
+        <li class="list-group-item" th:each="restaurant : ${restaurants}">
+            <span th:text="${restaurant.name}"></span>
+            <span th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></span>
+            <span th:text="${restaurant.ratingScore}"></span><p/>
+            <span>
+                <ul class="list-group">
+                    <li class="list-group-item" th:each="menuItem : ${restaurant.menu}">
+                        <span th:text="${menuItem.name}"></span>
+                        <span th:text="${menuItem.foodType.name}"></span>
+                        <span th:text="${menuItem.price}"></span>
+                        <span th:text="${menuItem.ratingScore}"></span>
+                    </li>
+                </ul>
+            </span>
+        </li>
+    </ul>
     <a th:href="@{/restaurants/add}" class="btn btn-default">Add a restaurant</a>
     <a th:href="@{/restaurants/menus/add}" class="btn btn-default">Add a menu item</a>
     <p />
