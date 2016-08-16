@@ -62,9 +62,19 @@ public class RestaurantController {
 	private MessageService messageService;
 
 	@GetMapping(path = {"", "/", "/list"})
-	public String index(Model model) {
-		List<Restaurant> restaurants = this.restaurantService.findAll();
+	public String index(@RequestParam(required = false) Long landmarkId, Model model) {
+		List<Landmark> landmarks = this.landmarkService.findAll();
+
+		List<Restaurant> restaurants;
+		if (landmarkId == null) {
+			restaurants = this.restaurantService.findAll();
+		}
+		else {
+			Landmark landmark = this.landmarkService.findOne(landmarkId);
+			restaurants = this.restaurantService.findByLandmarks(landmark);
+		}
 		List<Message> messages = this.messageService.findAllInReverseOrder();
+		model.addAttribute("landmarks", landmarks);
 		model.addAttribute("restaurants", restaurants);
 		model.addAttribute("messages", messages);
 		return "index";

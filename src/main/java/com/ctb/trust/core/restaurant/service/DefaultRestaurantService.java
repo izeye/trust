@@ -16,11 +16,13 @@
 
 package com.ctb.trust.core.restaurant.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
 import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 
@@ -38,6 +40,11 @@ public class DefaultRestaurantService implements RestaurantService {
 	@Override
 	public List<Restaurant> findAll() {
 		return this.restaurantRepository.findAll();
+	}
+
+	@Override
+	public List<Restaurant> findByLandmarks(Landmark... landmark) {
+		return this.restaurantRepository.findByLandmarks(Arrays.asList(landmark));
 	}
 
 	@Override

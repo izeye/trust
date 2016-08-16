@@ -16,7 +16,9 @@
 
 package com.ctb.trust.core.repository;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,14 @@ public class RestaurantRepositoryTests {
 
 	@Test
 	public void test() {
+		Restaurant restaurant = createRestaurant();
+
+		Restaurant found = this.restaurantRepository.findOne(restaurant.getId());
+		System.out.println(found);
+		assertThat(found).isEqualTo(restaurant);
+	}
+
+	private Restaurant createRestaurant() {
 		Restaurant restaurant = new Restaurant();
 		restaurant.setName("화로양");
 
@@ -70,10 +80,7 @@ public class RestaurantRepositoryTests {
 		restaurant.setRatingScore(RatingScore.GOOD);
 
 		this.restaurantRepository.save(restaurant);
-
-		Restaurant found = this.restaurantRepository.findOne(restaurant.getId());
-		System.out.println(found);
-		assertThat(found).isEqualTo(restaurant);
+		return restaurant;
 	}
 
 	@Test
@@ -81,18 +88,31 @@ public class RestaurantRepositoryTests {
 		this.restaurantRepository.findAll().forEach(System.out::println);
 	}
 
+	@Test
+	public void testFindByLandmarks() {
+		createRestaurant();
+
+		Landmark landmark = this.landmarkRepository.findByName("정자역");
+		List<Restaurant> restaurants = this.restaurantRepository.findByLandmarks(
+				Collections.singletonList(landmark));
+		restaurants.forEach(System.out::println);
+	}
+
 	private Set<Landmark> getLandmarks() {
-		Landmark landmark1 = new Landmark();
-		landmark1.setName("정자역");
-		Landmark landmark2 = new Landmark();
-		landmark2.setName("그린팩토리");
-		this.landmarkRepository.save(landmark1);
-		this.landmarkRepository.save(landmark2);
+		Landmark landmark1 = createLandmark("정자역");
+		Landmark landmark2 = createLandmark("그린팩토리");
 
 		Set<Landmark> landmarks = new HashSet<>();
 		landmarks.add(landmark1);
 		landmarks.add(landmark2);
 		return landmarks;
+	}
+
+	private Landmark createLandmark(String landmarkName) {
+		Landmark landmark1 = new Landmark();
+		landmark1.setName(landmarkName);
+		this.landmarkRepository.save(landmark1);
+		return landmark1;
 	}
 
 	private Set<MenuItem> getMenu() {

@@ -16,6 +16,8 @@
 
 package com.ctb.trust.core.restaurant.service;
 
+import java.util.List;
+
 import com.ctb.trust.core.restaurant.domain.Landmark;
 
 /**
@@ -24,6 +26,10 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
  * @author Johnny Lim
  */
 public interface LandmarkService {
+
+	List<Landmark> findAll();
+
+	Landmark findOne(Long id);
 
 	Landmark findByName(String name);
 

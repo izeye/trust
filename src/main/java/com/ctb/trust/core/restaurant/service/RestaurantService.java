@@ -18,6 +18,7 @@ package com.ctb.trust.core.restaurant.service;
 
 import java.util.List;
 
+import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
 
 /**
@@ -28,6 +29,8 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
 public interface RestaurantService {
 
 	List<Restaurant> findAll();
+
+	List<Restaurant> findByLandmarks(Landmark... landmark);
 
 	Restaurant findById(long id);
 

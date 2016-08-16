@@ -16,6 +16,8 @@
 
 package com.ctb.trust.core.restaurant.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,16 @@ public class DefaultLandmarkService implements LandmarkService {
 
 	@Autowired
 	LandmarkRepository landmarkRepository;
+
+	@Override
+	public List<Landmark> findAll() {
+		return this.landmarkRepository.findAll();
+	}
+
+	@Override
+	public Landmark findOne(Long id) {
+		return this.landmarkRepository.findOne(id);
+	}
 
 	@Override
 	public Landmark findByName(String name) {

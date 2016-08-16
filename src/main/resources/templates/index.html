@@ -21,6 +21,11 @@
 <body>
 <div class="container">
     <h1>Restaurants</h1>
+    <ul>
+        <li th:each="landmark : ${landmarks}">
+            <a th:href="'/restaurants?landmarkId=' + ${landmark.id}" th:text="${landmark.name}"></a>
+        </li>
+    </ul>
     <ul class="list-group">
         <li class="list-group-item" th:each="restaurant : ${restaurants}">
             <span th:text="${restaurant.name}"></span>
