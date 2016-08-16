@@ -26,23 +26,31 @@
             <a th:href="'/restaurants?landmarkId=' + ${landmark.id}" th:text="${landmark.name}"></a>
         </li>
     </ul>
-    <ul class="list-group">
-        <li class="list-group-item" th:each="restaurant : ${restaurants}">
-            <span th:text="${restaurant.name}"></span>
-            <span th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></span>
-            <span th:text="${restaurant.ratingScore}"></span><p/>
-            <span>
-                <ul class="list-group">
-                    <li class="list-group-item" th:each="menuItem : ${restaurant.menu}">
-                        <span th:text="${menuItem.name}"></span>
-                        <span th:text="${menuItem.foodType.name}"></span>
-                        <span th:text="${menuItem.price}"></span>
-                        <span th:text="${menuItem.ratingScore}"></span>
-                    </li>
-                </ul>
-            </span>
-        </li>
-    </ul>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default" th:each="restaurant : ${restaurants}">
+            <div class="panel-heading" role="tab" th:id="'restaurant' + ${restaurant.id}">
+                <h6 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" th:href="'#menu' + ${restaurant.id}" aria-expanded="false" th:attr="aria-controls='menu' + ${restaurant.id}">
+                        <span th:text="${restaurant.name}"></span>
+                        <span th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></span>
+                        <span th:text="${restaurant.ratingScore}"></span>
+                    </a>
+                </h6>
+            </div>
+            <div th:id="'menu' + ${restaurant.id}" class="panel-collapse collapse" role="tabpanel" th:attr="aria-labelledby='restaurant' + ${restaurant.id}">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" th:each="menuItem : ${restaurant.menu}">
+                            <span th:text="${menuItem.name}"></span>
+                            <span th:text="${menuItem.foodType.name}"></span>
+                            <span th:text="${menuItem.price}"></span>
+                            <span th:text="${menuItem.ratingScore}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <a th:href="@{/restaurants/add}" class="btn btn-default">Add a restaurant</a>
     <a th:href="@{/restaurants/menus/add}" class="btn btn-default">Add a menu item</a>
     <p />
@@ -62,5 +70,7 @@
     </table>
     <a th:href="@{/messages/add}" class="btn btn-default">Leave a message</a>
 </div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>
