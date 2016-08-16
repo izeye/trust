@@ -18,6 +18,8 @@ package com.ctb.trust.core.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -28,6 +30,8 @@ import org.junit.runner.RunWith;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Tests for landmark repository.
@@ -40,12 +44,20 @@ import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 public class LandmarkRepositoryTests {
 
 	@Autowired
-	LandmarkRepository landmarkRepository;
+	private LandmarkRepository landmarkRepository;
 
 	@Test
+	@Transactional
 	public void testFindByOrderByName() {
+		Landmark landmark1 = new Landmark();
+		landmark1.setName("Seoul");
+		Landmark landmark2 = new Landmark();
+		landmark2.setName("London");
+		this.landmarkRepository.save(landmark1);
+		this.landmarkRepository.save(landmark2);
+
 		List<Landmark> landmarks = this.landmarkRepository.findByOrderByName();
-		landmarks.forEach(System.out::println);
+		assertThat(landmarks).containsExactly(landmark2, landmark1);
 	}
 
 }
