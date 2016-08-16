@@ -16,6 +16,8 @@
 
 package com.ctb.trust.core.restaurant.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
@@ -28,5 +30,7 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
 public interface LandmarkRepository extends JpaRepository<Landmark, Long> {
 
 	Landmark findByName(String name);
+
+	List<Landmark> findByOrderByName();
 
 }

@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.core.restaurant.service;
+package com.ctb.trust.core.repository;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 
 /**
- * Default service for landmarks.
+ * Tests for landmark repository.
  *
  * @author Johnny Lim
  */
-@Service
-public class DefaultLandmarkService implements LandmarkService {
+@RunWith(SpringRunner.class)
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+public class LandmarkRepositoryTests {
 
 	@Autowired
 	LandmarkRepository landmarkRepository;
 
-	@Override
-	public List<Landmark> findAll() {
-		return this.landmarkRepository.findByOrderByName();
-	}
-
-	@Override
-	public Landmark findOne(Long id) {
-		return this.landmarkRepository.findOne(id);
-	}
-
-	@Override
-	public Landmark findByName(String name) {
-		return this.landmarkRepository.findByName(name);
-	}
-
-	@Override
-	public void add(Landmark landmark) {
-		this.landmarkRepository.save(landmark);
+	@Test
+	public void test() {
+		List<Landmark> landmarks = this.landmarkRepository.findByOrderByName();
+		landmarks.forEach(System.out::println);
 	}
 
 }
