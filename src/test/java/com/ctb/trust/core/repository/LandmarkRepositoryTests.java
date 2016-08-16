@@ -43,7 +43,7 @@ public class LandmarkRepositoryTests {
 	LandmarkRepository landmarkRepository;
 
 	@Test
-	public void test() {
+	public void testFindByOrderByName() {
 		List<Landmark> landmarks = this.landmarkRepository.findByOrderByName();
 		landmarks.forEach(System.out::println);
 	}
