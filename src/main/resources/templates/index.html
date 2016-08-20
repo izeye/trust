@@ -21,11 +21,26 @@
 <body>
 <div class="container">
     <h1>Restaurants</h1>
-    <ul>
-        <li th:each="landmark : ${landmarks}">
-            <a th:href="'/restaurants?landmarkId=' + ${landmark.id}" th:text="${landmark.name}"></a>
-        </li>
-    </ul>
+    <div class="panel-group" id="filter-accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="landmark-filter">
+                <h6 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#filter-accordion" href="#landmark-filter-detail" aria-expanded="false" aria-controls="landmark-filter-detail">
+                        <span>Landmark filter</span>
+                    </a>
+                </h6>
+            </div>
+            <div id="landmark-filter-detail" class="panel-collapse collapse" role="tabpanel" aria-labelledby="landmark-filter">
+                <div class="panel-body">
+                    <ul>
+                        <li th:each="landmark : ${landmarks}">
+                            <a th:href="'/restaurants?landmarkId=' + ${landmark.id}" th:text="${landmark.name}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default" th:each="restaurant : ${restaurants}">
             <div class="panel-heading" role="tab" th:id="'restaurant' + ${restaurant.id}">
