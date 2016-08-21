@@ -46,7 +46,7 @@
             <div class="panel-heading" role="tab" th:id="'restaurant' + ${restaurant.id}">
                 <h6 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" th:href="'#menu' + ${restaurant.id}" aria-expanded="false" th:attr="aria-controls='menu' + ${restaurant.id}">
-                        <span th:text="${restaurant.name}"></span>
+                        <span th:text="${restaurant.name}"></span><br/>
                         <small th:each="landmark : ${restaurant.landmarks}" th:text="${landmark.name + ', '}"></small>
                         <small th:text="${restaurant.ratingScore}"></small>
                     </a>
@@ -57,9 +57,9 @@
                     <ul class="list-group">
                         <li class="list-group-item" th:each="menuItem : ${restaurant.menu}">
                             <span th:text="${menuItem.name}"></span>
-                            <span th:text="${menuItem.foodType.name}"></span>
-                            <span th:text="${menuItem.price}"></span>
-                            <span th:text="${menuItem.ratingScore}"></span>
+                            <small th:text="${menuItem.foodType.name}"></small>
+                            <small th:text="${menuItem.price}"></small>
+                            <small th:text="${menuItem.ratingScore}"></small>
                         </li>
                     </ul>
                 </div>
