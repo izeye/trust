@@ -47,7 +47,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     
     compile("org.webjars:webjars-locator")
-    
+
     compile("org.webjars:bootstrap:${bootstrapVersion}")
 
     provided("org.projectlombok:lombok")
