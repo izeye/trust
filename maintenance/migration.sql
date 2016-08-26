@@ -1,3 +1,9 @@
+-- 2016-08-26
+mysql> DROP TABLE message;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+
 -- 2016-08-16
 mysql> INSERT INTO restaurant_landmarks VALUES (44, 16);
 Query OK, 1 row affected (0.00 sec)
