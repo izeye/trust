@@ -24,6 +24,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import org.junit.Test;
@@ -50,14 +51,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class RestaurantRepositoryTests {
 
-	@Autowired
-	RestaurantRepository restaurantRepository;
+	private static final Sort SORT_BY_RATING_SCORE_DESC =
+			new Sort(Sort.Direction.DESC, "ratingScore");
 
 	@Autowired
-	LandmarkRepository landmarkRepository;
+	private RestaurantRepository restaurantRepository;
 
 	@Autowired
-	FoodTypeRepository foodTypeRepository;
+	private LandmarkRepository landmarkRepository;
+
+	@Autowired
+	private FoodTypeRepository foodTypeRepository;
 
 	@Test
 	public void test() {
@@ -85,7 +89,7 @@ public class RestaurantRepositoryTests {
 
 	@Test
 	public void testFindAll() {
-		this.restaurantRepository.findAll().forEach(System.out::println);
+		this.restaurantRepository.findAll(SORT_BY_RATING_SCORE_DESC).forEach(System.out::println);
 	}
 
 	@Test
@@ -94,7 +98,7 @@ public class RestaurantRepositoryTests {
 
 		Landmark landmark = this.landmarkRepository.findByName("정자역");
 		List<Restaurant> restaurants = this.restaurantRepository.findByLandmarks(
-				Collections.singletonList(landmark));
+				Collections.singletonList(landmark), SORT_BY_RATING_SCORE_DESC);
 		restaurants.forEach(System.out::println);
 	}
 

@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
@@ -34,17 +35,21 @@ import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 @Service
 public class DefaultRestaurantService implements RestaurantService {
 
+	private static final Sort SORT_BY_RATING_SCORE_DESC =
+			new Sort(Sort.Direction.DESC, "ratingScore");
+
 	@Autowired
 	private RestaurantRepository restaurantRepository;
 
 	@Override
 	public List<Restaurant> findAll() {
-		return this.restaurantRepository.findAll();
+		return this.restaurantRepository.findAll(SORT_BY_RATING_SCORE_DESC);
 	}
 
 	@Override
 	public List<Restaurant> findByLandmarks(Landmark... landmark) {
-		return this.restaurantRepository.findByLandmarks(Arrays.asList(landmark));
+		return this.restaurantRepository.findByLandmarks(
+				Arrays.asList(landmark), SORT_BY_RATING_SCORE_DESC);
 	}
 
 	@Override

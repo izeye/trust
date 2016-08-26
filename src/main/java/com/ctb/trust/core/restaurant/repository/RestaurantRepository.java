@@ -18,6 +18,7 @@ package com.ctb.trust.core.restaurant.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
@@ -30,6 +31,6 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
  */
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
-	List<Restaurant> findByLandmarks(List<Landmark> landmarks);
+	List<Restaurant> findByLandmarks(List<Landmark> landmarks, Sort sort);
 
 }
