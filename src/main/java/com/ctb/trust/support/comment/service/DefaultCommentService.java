@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.support.message.service;
+package com.ctb.trust.support.comment.service;
 
 import java.util.List;
 
@@ -22,30 +22,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.ctb.trust.support.message.domain.Message;
-import com.ctb.trust.support.message.repository.MessageRepository;
+import com.ctb.trust.support.comment.domain.Comment;
+import com.ctb.trust.support.comment.repository.CommentRepository;
 
 /**
- * Default service for messages.
+ * Default service for comments.
  *
  * @author Johnny Lim
  */
 @Service
-public class DefaultMessageService implements MessageService {
+public class DefaultCommentService implements CommentService {
 
 	private static final Sort ID_DESC = new Sort(Sort.Direction.DESC, "id");
 
 	@Autowired
-	private MessageRepository messageRepository;
+	private CommentRepository commentRepository;
 
 	@Override
-	public List<Message> findAllInReverseOrder() {
-		return this.messageRepository.findAll(ID_DESC);
+	public List<Comment> findAllInIdDesc() {
+		return this.commentRepository.findAll(ID_DESC);
 	}
 
 	@Override
-	public void add(Message message) {
-		this.messageRepository.save(message);
+	public void add(Comment comment) {
+		this.commentRepository.save(comment);
 	}
 
 }

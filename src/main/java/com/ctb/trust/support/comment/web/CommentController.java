@@ -14,43 +14,45 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.support.message.web;
+package com.ctb.trust.support.comment.web;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import lombok.extern.slf4j.Slf4j;
-
-import com.ctb.trust.support.message.domain.Message;
-import com.ctb.trust.support.message.service.MessageService;
+import com.ctb.trust.support.comment.domain.Comment;
+import com.ctb.trust.support.comment.service.CommentService;
 
 /**
- * Controller for messages.
+ * Controller for comments.
  *
  * @author Johnny Lim
  */
-@Controller
-@RequestMapping(path = "/messages")
-@Slf4j
-public class MessageController {
+@RestController
+@RequestMapping("/api/v1/comments")
+public class CommentController {
 
 	@Autowired
-	private MessageService messageService;
+	private CommentService commentService;
 
-	@GetMapping("/add")
-	public String add() {
-		return "messages/add";
+	@GetMapping
+	public List<Comment> findAllInDesc() {
+		return this.commentService.findAllInIdDesc();
 	}
 
-	@PostMapping("/add")
-	public String add(Message message) {
-		log.info("Message: {}", message);
-
-		this.messageService.add(message);
-		return "redirect:/";
+	@PostMapping
+	public List<Comment> add(Comment comment, HttpServletRequest request) {
+		comment.setTimestamp(new Date());
+		comment.setIpAddress(request.getRemoteAddr());
+		this.commentService.add(comment);
+		return this.commentService.findAllInIdDesc();
 	}
 
 }

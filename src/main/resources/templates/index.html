@@ -10,6 +10,14 @@
     <title>Trust</title>
     
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+
+    <script src="https://npmcdn.com/react@15.3.1/dist/react-with-addons.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+
+    <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,23 +77,10 @@
     <a th:href="@{/restaurants/add}" class="btn btn-default">Add a restaurant</a>
     <a th:href="@{/restaurants/menus/add}" class="btn btn-default">Add a menu item</a>
     <p />
-    
-    <h2>Messages</h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Message</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="message : ${messages}">
-            <td th:text="${message.body}"></td>
-        </tr>
-        </tbody>
-    </table>
-    <a th:href="@{/messages/add}" class="btn btn-default">Leave a message</a>
+
+    <div id="comments"></div>
 </div>
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script type="text/babel" th:src="@{js/comments.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>

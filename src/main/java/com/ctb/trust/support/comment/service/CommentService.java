@@ -14,27 +14,21 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.support.message.domain;
+package com.ctb.trust.support.comment.service;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 
-import lombok.Data;
+import com.ctb.trust.support.comment.domain.Comment;
 
 /**
- * Message.
+ * Service interface for comments.
  *
  * @author Johnny Lim
  */
-@Data
-@Entity
-public class Message {
+public interface CommentService {
 
-	@Id
-	@GeneratedValue
-	private Long id;
+	List<Comment> findAllInIdDesc();
 
-	private String body;
+	void add(Comment comment);
 
 }

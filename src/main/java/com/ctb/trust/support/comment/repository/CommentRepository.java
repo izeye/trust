@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.support.message.repository;
+package com.ctb.trust.support.comment.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.ctb.trust.support.message.domain.Message;
+import com.ctb.trust.support.comment.domain.Comment;
 
 /**
- * Repository for messages.
+ * Repository for comments.
  *
  * @author Johnny Lim
  */
-public interface MessageRepository extends JpaRepository<Message, Long> {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }

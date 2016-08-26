@@ -14,21 +14,33 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.support.message.service;
+package com.ctb.trust.support.comment.domain;
 
-import java.util.List;
+import java.util.Date;
 
-import com.ctb.trust.support.message.domain.Message;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Data;
 
 /**
- * Service interface for messages.
+ * Comment.
  *
  * @author Johnny Lim
  */
-public interface MessageService {
+@Data
+@Entity
+public class Comment {
 
-	List<Message> findAllInReverseOrder();
+	@Id
+	@GeneratedValue
+	private Long id;
 
-	void add(Message message);
+	private String author;
+	private String text;
+
+	private Date timestamp;
+	private String ipAddress;
 
 }

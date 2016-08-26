@@ -37,8 +37,6 @@ import com.ctb.trust.core.restaurant.domain.Restaurant;
 import com.ctb.trust.core.restaurant.service.FoodTypeService;
 import com.ctb.trust.core.restaurant.service.LandmarkService;
 import com.ctb.trust.core.restaurant.service.RestaurantService;
-import com.ctb.trust.support.message.domain.Message;
-import com.ctb.trust.support.message.service.MessageService;
 
 /**
  * Controller for restaurants.
@@ -58,9 +56,6 @@ public class RestaurantController {
 	@Autowired
 	private FoodTypeService foodTypeService;
 
-	@Autowired
-	private MessageService messageService;
-
 	@GetMapping(path = {"", "/", "/list"})
 	public String index(@RequestParam(required = false) Long landmarkId, Model model) {
 		List<Landmark> landmarks = this.landmarkService.findAll();
@@ -73,10 +68,8 @@ public class RestaurantController {
 			Landmark landmark = this.landmarkService.findOne(landmarkId);
 			restaurants = this.restaurantService.findByLandmarks(landmark);
 		}
-		List<Message> messages = this.messageService.findAllInReverseOrder();
 		model.addAttribute("landmarks", landmarks);
 		model.addAttribute("restaurants", restaurants);
-		model.addAttribute("messages", messages);
 		return "index";
 	}
 
