@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.core.repository;
+package com.ctb.trust.core.restaurant.repository;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -35,9 +35,6 @@ import com.ctb.trust.core.restaurant.domain.Landmark;
 import com.ctb.trust.core.restaurant.domain.MenuItem;
 import com.ctb.trust.core.restaurant.domain.RatingScore;
 import com.ctb.trust.core.restaurant.domain.Restaurant;
-import com.ctb.trust.core.restaurant.repository.FoodTypeRepository;
-import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
-import com.ctb.trust.core.restaurant.repository.RestaurantRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

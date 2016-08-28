@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ctb.trust.core.repository;
+package com.ctb.trust.core.restaurant.repository;
 
 import java.util.List;
 
@@ -29,7 +29,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import com.ctb.trust.core.restaurant.domain.Landmark;
-import com.ctb.trust.core.restaurant.repository.LandmarkRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

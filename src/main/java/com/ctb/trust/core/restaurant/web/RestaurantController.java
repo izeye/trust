@@ -144,6 +144,7 @@ public class RestaurantController {
 		Set<Landmark> landmarkSet = new HashSet<>();
 		Set<String> landmarkNames = StringUtils.commaDelimitedListToSet(landmarks);
 		for (String landmarkName : landmarkNames) {
+			landmarkName = landmarkName.trim();
 			Landmark landmark = this.landmarkService.findByName(landmarkName);
 			if (landmark == null) {
 				landmark = new Landmark();
