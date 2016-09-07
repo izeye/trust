@@ -15,3 +15,6 @@ trust.iml
 bin/
 .classpath
 .project
+
+node_modules/
+src/main/resources/public/js/bundle.js

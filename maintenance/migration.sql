@@ -1,3 +1,13 @@
+-- 2016-09-07
+mysql> UPDATE restaurant_landmarks SET landmarks_id=7 WHERE landmarks_id=30;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> DELETE FROM landmark WHERE id=30;
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+
 -- 2016-08-27
 mysql> UPDATE restaurant_landmarks SET landmarks_id=7 WHERE restaurant_id=59 AND landmarks_id=27;
 Query OK, 1 row affected (0.03 sec)

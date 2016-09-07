@@ -1,0 +1,27 @@
+{
+  "name": "trust",
+  "version": "1.0.0",
+  "description": "Trust yourself, trust your friends, trust your network.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izeye/trust.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izeye/trust/issues"
+  },
+  "homepage": "https://github.com/izeye/trust",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.11.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "rest": "^2.0.0",
+    "webpack": "^1.13.2"
+  }
+}
