@@ -11,7 +11,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("App did mount!");
   }
 
   render() {
@@ -35,8 +34,6 @@ class LandmarkFilter extends React.Component {
   }
 
   componentDidMount() {
-    console.log("LandmarkFilter did mount!");
-
     client({
       method: 'GET',
       path: '/api/landmarks?size=100&sort=name'
@@ -82,7 +79,6 @@ class LandmarkFilterItem extends React.Component {
   }
 
   componentDidMount() {
-    console.log("LandmarkFilterItem did mount!");
   }
 
   render() {
