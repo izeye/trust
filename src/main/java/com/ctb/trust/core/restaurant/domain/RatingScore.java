@@ -72,6 +72,12 @@ public enum RatingScore {
 		return score;
 	}
 
+	/**
+	 * Get {@link RatingScore} by score value.
+	 *
+	 * @param score score value
+	 * @return {@link RatingScore} mapped with score value
+	 */
 	public static RatingScore getValueByScore(int score) {
 		return VALUE_BY_SCORE.get(score);
 	}
