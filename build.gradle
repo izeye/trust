@@ -52,7 +52,8 @@ dependencies {
 
     compile("org.webjars:bootstrap:${bootstrapVersion}")
 
-    provided("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
@@ -61,8 +62,8 @@ springBoot {
     executable = true
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.8.1'
+wrapper {
+    gradleVersion = '6.0.1'
 }
 
 tasks.withType(JavaCompile) {
